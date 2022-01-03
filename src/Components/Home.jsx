@@ -140,6 +140,8 @@ function Home() {
 
   const [searches, setSearches] = useState([]);
 
+  const username = user.name;
+
   return (
     <>
       <Body>
@@ -163,6 +165,8 @@ function Home() {
                     progress: undefined,
                   })
                 );
+
+              console.log(username);
 
               axios
                 .get(`https://api.github.com/users/${name}`)
@@ -189,7 +193,7 @@ function Home() {
           </form>
         </nav>
 
-        {typeof user.name === "string" ? (
+        {typeof user.id === "number" ? (
           <>
             <Wrapper>
               <a href={`/profile/${user.login}`}>
