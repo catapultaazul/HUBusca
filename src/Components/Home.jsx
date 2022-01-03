@@ -176,6 +176,7 @@ function Home() {
             <section>
               <input
                 value={name}
+                placeholder="Digite o usuário do GitHub"
                 onChange={(event) => {
                   setName(event.target.value);
                 }}
