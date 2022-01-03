@@ -152,8 +152,8 @@ function Home() {
               axios
                 .get(`https://api.github.com/users/${name}`)
                 .then((response) => setUser(response.data))
-                .catch((error) =>
-                  toast.error("Não foi possível encontrar este usuário", {
+                .catch(() =>
+                  toast.error("Não foi possível encontrar este usuário ☹️", {
                     position: toast.POSITION.BOTTOM_RIGHT,
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -192,7 +192,7 @@ function Home() {
         {typeof user.name === "string" ? (
           <>
             <Wrapper>
-              <a href={`/profile/${name}`}>
+              <a href={`/profile/${user.login}`}>
                 <img src={user.avatar_url} alt="" />
               </a>
               <div>

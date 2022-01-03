@@ -163,12 +163,16 @@ function Profile() {
               </span>{" "}
               <h3>{user.login}</h3>
             </div>
-            <div className="container">
-              <span className="icon">
-                <BiMap />
-              </span>{" "}
-              <h3>{user.location}</h3>
-            </div>
+            {typeof user.location === "string" ? (
+              <div className="container">
+                <span className="icon">
+                  <BiMap />
+                </span>{" "}
+                <h3>{user.location}</h3>
+              </div>
+            ) : (
+              ""
+            )}
             <h3>
               <span className="secondary">ID </span>
               {user.id}
