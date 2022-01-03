@@ -134,13 +134,13 @@ function Profile() {
     axios
       .get(`https://api.github.com/users/${name}`)
       .then((response) => setUser(response.data));
-  }, []);
+  }, [name]);
 
   useEffect(() => {
     axios
       .get(`https://api.github.com/users/${name}/repos`)
       .then((response) => setRepos(response.data));
-  }, []);
+  }, [name]);
 
   return (
     <Body>
